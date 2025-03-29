@@ -1,0 +1,1 @@
+# St-thomas-semninery
