@@ -1,0 +1,121 @@
+/* Reuse mission.css for base styles and header/footer */
+@import url('mission.css');
+/* Activities Page Styles */
+.activities-container {
+    padding: 100px 0 50px;
+    background-color: #fff;
+}
+
+/* Events Section */
+.events-section h1,
+.student-life h2,
+.outreach h2 {
+    color: #0056b3;
+    margin-bottom: 40px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.events-section h1:after,
+.student-life h2:after,
+.outreach h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #dc3545;
+}
+
+/* Grid Layouts */
+.events-grid,
+.life-grid,
+.outreach-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* Card Styles */
+.event-card,
+.life-card,
+.outreach-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover,
+.life-card:hover,
+.outreach-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image Container with Aspect Ratio */
+.event-card img,
+.life-card img,
+.outreach-card img {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%; /* Creates 1:1 aspect ratio */
+    object-fit: cover;
+    display: block;
+    position: relative;
+}
+
+/* Fix for browsers that don't support object-fit */
+@supports not (object-fit: cover) {
+    .event-card img,
+    .life-card img,
+    .outreach-card img {
+        height: 250px;
+        padding-bottom: 0;
+    }
+}
+
+/* Content Styles */
+.event-content,
+.life-card > div,
+.outreach-card > div {
+    padding: 20px;
+}
+
+.event-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #003d7a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .events-grid,
+    .life-grid,
+    .outreach-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .activities-container {
+        padding: 80px 0 30px;
+    }
+}
